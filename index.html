@@ -30,21 +30,8 @@
             margin: 30px 0 20px;
             text-align: center;
         }
-        .grade-card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .grade-card:hover {
-            transform: scale(1.05);
-        }
-        .subject-list {
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .grade-section {
+            margin-bottom: 30px;
         }
         .subject-item {
             margin: 10px 0;
@@ -72,114 +59,88 @@
     <section class="welcome-message">
         <div class="container">
             <h1 data-aos="fade-up">مرحبًا بكم في موقع الملازم الدراسية!</h1>
-            <p data-aos="fade-up" data-aos-delay="200">اختر الصف الدراسي لتصفح الملازم المتوفرة</p>
+            <p data-aos="fade-up" data-aos-delay="200">تصفح جميع الصفوف الدراسية وموادها</p>
         </div>
     </section>
 
-    <!-- أقسام الصفوف الدراسية -->
+    <!-- عرض جميع الصفوف الدراسية والمواد -->
     <div class="container">
-        <h2 class="section-title" data-aos="fade-right">اختر الصف الدراسي</h2>
-        <div class="row">
-            <!-- تكرار للأقسام الدراسية -->
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الأول متوسط')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف الأول متوسط</h3>
+        <h2 class="section-title" data-aos="fade-right">الأقسام الدراسية</h2>
+
+        <!-- الصفوف المتوسطة -->
+        <div class="grade-section" data-aos="zoom-in">
+            <h3 class="text-center">الصفوف المتوسطة</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف الأول متوسط</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الأحياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الاجتماعيات</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف الثاني متوسط</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الفيزياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الاجتماعيات</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف الثالث متوسط</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الفيزياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الاجتماعيات</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الثاني متوسط')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف الثاني متوسط</h3>
+        </div>
+
+        <!-- الصفوف الإعدادية -->
+        <div class="grade-section" data-aos="zoom-in">
+            <h3 class="text-center">الصفوف الإعدادية</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف الرابع إعدادي</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الأحياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الفيزياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الثالث متوسط')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف الثالث متوسط</h3>
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف الخامس إعدادي</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الأحياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الفيزياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الرابع اعدادي')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف الرابع اعدادي</h3>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الخامس اعدادي')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف الخامس اعدادي</h3>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف السادس اعدادي')">
-                <div class="grade-card p-3 bg-light">
-                    <h3 class="text-center">الصف السادس اعدادي</h3>
+                <div class="col-md-4">
+                    <div class="subject-list">
+                        <h4>الصف السادس إعدادي</h4>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الأحياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الكيمياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الفيزياء</a></div>
+                        <div class="subject-item"><a href="https://t.me/your_bot_link" target="_blank">ملزمة الرياضيات</a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- قائمة الملازم -->
-    <div class="container mt-5">
-        <div id="subject-list" class="subject-list d-none">
-            <h2 class="section-title">المواد الدراسية</h2>
-            <div id="subjects-container">
-                <!-- المواد الدراسية تظهر هنا عبر JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <!-- سكريبت AOS و JavaScript لتفعيل الأقسام والملازم -->
+    <!-- سكريبت AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // تفعيل AOS
         AOS.init();
-
-        // دالة لعرض المواد الدراسية حسب الصف
-        function showSubjects(grade) {
-            // بيانات الملازم حسب الصف
-            const subjectData = {
-                'الصف الأول متوسط': [
-                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الاجتماعيات", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
-                ],
-                'الصف الثاني متوسط': [
-                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة العلوم", link: "https://t.me/your_bot_link" }
-                ],
-                // تكرار البيانات لباقي الصفوف...
-                'الصف الثالث متوسط': [
-                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
-                ],
-                'الصف الرابع اعدادي': [
-                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" }
-                ],
-                'الصف الخامس اعدادي': [
-                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" }
-                ],
-                'الصف السادس اعدادي': [
-                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
-                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" }
-                ]
-            };
-
-            // إظهار الملازم للصف المختار
-            const subjects = subjectData[grade] || [];
-            const container = document.getElementById('subjects-container');
-            container.innerHTML = ''; // مسح المواد القديمة
-
-            subjects.forEach(subject => {
-                const subjectDiv = document.createElement('div');
-                subjectDiv.className = 'subject-item';
-                subjectDiv.innerHTML = `<a href="${subject.link}" target="_blank" style="color: #fff;">${subject.name}</a>`;
-                container.appendChild(subjectDiv);
-            });
-
-            document.getElementById('subject-list').classList.remove('d-none');
-        }
     </script>
 </body>
 </html>
