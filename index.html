@@ -1,85 +1,133 @@
-```html
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الملازم التعليمية</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>موقع الملازم الدراسية</title>
+    <!-- روابط Bootstrap و AOS للرسوم المتحركة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* إعداد الألوان والخطوط */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .welcome-message {
+            background: linear-gradient(to right, #007bff, #6a11cb);
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+        .grade-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .grade-card:hover {
+            transform: scale(1.05);
+        }
+        .subject-list {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .subject-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .subject-item:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>مرحبًا بكم في موقع الملازم التعليمية</h1>
-        <nav>
-            <ul>
-                <li><a href="#first">الصف الأول متوسط</a></li>
-                <li><a href="#second">الصف الثاني متوسط</a></li>
-                <li><a href="#third">الصف الثالث متوسط</a></li>
-                <li><a href="#fourth">الصف الرابع اعدادي</a></li>
-                <li><a href="#fifth">الصف الخامس اعدادي</a></li>
-                <li><a href="#sixth">الصف السادس اعدادي</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">موقع الملازم الدراسية</a>
+        </div>
+    </nav>
 
-    <main>
-        <section id="welcome" class="welcome-section">
-            <h2>رسالة ترحيب</h2>
-            <p>مرحبًا بكم في منصتنا! هنا ستجدون جميع الملازم الدراسية المطلوبة لمساعدتكم في دراستكم. استمتعوا بالتصفح!</p>
-        </section>
+    <!-- رسالة ترحيب -->
+    <section class="welcome-message">
+        <div class="container">
+            <h1 data-aos="fade-up">مرحبًا بكم في موقع الملازم الدراسية!</h1>
+            <p data-aos="fade-up" data-aos-delay="200">اختر الصف الدراسي لتصفح الملازم المتوفرة</p>
+        </div>
+    </section>
 
-        <section id="first">
-            <h2>ملازم الصف الأول متوسط</h2>
-            <div class="resource">
-                <h3>ملازم الأحياء</h3>
-                <a href="https://t.me/YourBotLink1" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
+    <!-- أقسام الصفوف الدراسية -->
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-right">اختر الصف الدراسي</h2>
+        <div class="row">
+            <!-- تكرار للأقسام الدراسية -->
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الأول متوسط')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف الأول متوسط</h3>
+                </div>
             </div>
-            <div class="resource">
-                <h3>ملازم الرياضيات</h3>
-                <a href="https://t.me/YourBotLink2" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- أضف المزيد من المواد هنا -->
-        </section>
+            <!-- المزيد من الصفوف -->
+            <!-- تكرار نفس الكود للصفوف الباقية (الثاني، الثالث، الرابع، الخامس، السادس) -->
+        </div>
+    </div>
 
-        <section id="second">
-            <h2>ملازم الصف الثاني متوسط</h2>
-            <div class="resource">
-                <h3>ملازم الكيمياء</h3>
-                <a href="https://t.me/YourBotLink3" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
+    <!-- قائمة الملازم -->
+    <div class="container mt-5">
+        <div id="subject-list" class="subject-list d-none">
+            <h2 class="section-title">المواد الدراسية</h2>
+            <div id="subjects-container">
+                <!-- المواد الدراسية تظهر هنا عبر JavaScript -->
             </div>
-            <!-- أضف المزيد من المواد هنا -->
-        </section>
+        </div>
+    </div>
 
-        <section id="third">
-            <h2>ملازم الصف الثالث متوسط</h2>
-            <div class="resource">
-                <h3>ملازم الاجتماعيات</h3>
-                <a href="https://t.me/YourBotLink4" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- أضف المزيد من المواد هنا -->
-        </section>
+    <!-- سكريبت AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // تفعيل AOS
+        AOS.init();
 
-        <section id="fourth">
-            <h2>ملازم الصف الرابع اعدادي</h2>
-            <div class="resource">
-                <h3>ملازم الفيزياء</h3>
-                <a href="https://t.me/YourBotLink5" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- أضف المزيد من المواد هنا -->
-        </section>
+        // دالة لعرض المواد الدراسية
+        function showSubjects(grade) {
+            const subjects = [
+                { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
+                { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
+                { name: "ملزمة الاجتماعيات", link: "https://t.me/your_bot_link" },
+                { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
+            ];
 
-        <section id="fifth">
-            <h2>ملازم الصف الخامس اعدادي</h2>
-            <div class="resource">
-                <h3>ملازم الرياضيات</h3>
-                <a href="https://t.me/YourBotLink6" class="btn">اذهب إلى الملازم <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- أضف المزيد من المواد هنا -->
-        </section>
+            const container = document.getElementById('subjects-container');
+            container.innerHTML = ''; // مسح المواد القديمة
 
-        <section id="sixth">
-            <h2>ملازم الصف السادس اعدادي</h2>
-            <div class="resource">
-                <h3>ملازم الأحياء</h3>
-                <a href="https://t.me/YourBotLink7" class="btn">اذ
+            subjects.forEach(subject => {
+                const subjectDiv = document.createElement('div');
+                subjectDiv.className = 'subject-item';
+                subjectDiv.innerHTML = `<a href="${subject.link}" target="_blank" style="color: #fff;">${subject.name}</a>`;
+                container.appendChild(subjectDiv);
+            });
+
+            document.getElementById('subject-list').classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>
