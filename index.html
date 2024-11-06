@@ -86,8 +86,31 @@
                     <h3 class="text-center">الصف الأول متوسط</h3>
                 </div>
             </div>
-            <!-- المزيد من الصفوف -->
-            <!-- تكرار نفس الكود للصفوف الباقية (الثاني، الثالث، الرابع، الخامس، السادس) -->
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الثاني متوسط')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف الثاني متوسط</h3>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الثالث متوسط')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف الثالث متوسط</h3>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الرابع اعدادي')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف الرابع اعدادي</h3>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف الخامس اعدادي')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف الخامس اعدادي</h3>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="zoom-in" onclick="showSubjects('الصف السادس اعدادي')">
+                <div class="grade-card p-3 bg-light">
+                    <h3 class="text-center">الصف السادس اعدادي</h3>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,21 +124,50 @@
         </div>
     </div>
 
-    <!-- سكريبت AOS -->
+    <!-- سكريبت AOS و JavaScript لتفعيل الأقسام والملازم -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // تفعيل AOS
         AOS.init();
 
-        // دالة لعرض المواد الدراسية
+        // دالة لعرض المواد الدراسية حسب الصف
         function showSubjects(grade) {
-            const subjects = [
-                { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
-                { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
-                { name: "ملزمة الاجتماعيات", link: "https://t.me/your_bot_link" },
-                { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
-            ];
+            // بيانات الملازم حسب الصف
+            const subjectData = {
+                'الصف الأول متوسط': [
+                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الاجتماعيات", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
+                ],
+                'الصف الثاني متوسط': [
+                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة العلوم", link: "https://t.me/your_bot_link" }
+                ],
+                // تكرار البيانات لباقي الصفوف...
+                'الصف الثالث متوسط': [
+                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الرياضيات", link: "https://t.me/your_bot_link" }
+                ],
+                'الصف الرابع اعدادي': [
+                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" }
+                ],
+                'الصف الخامس اعدادي': [
+                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الأحياء", link: "https://t.me/your_bot_link" }
+                ],
+                'الصف السادس اعدادي': [
+                    { name: "ملزمة الكيمياء", link: "https://t.me/your_bot_link" },
+                    { name: "ملزمة الفيزياء", link: "https://t.me/your_bot_link" }
+                ]
+            };
 
+            // إظهار الملازم للصف المختار
+            const subjects = subjectData[grade] || [];
             const container = document.getElementById('subjects-container');
             container.innerHTML = ''; // مسح المواد القديمة
 
